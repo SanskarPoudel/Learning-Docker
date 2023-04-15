@@ -9,4 +9,10 @@ WORKDIR /app
 #(Second dot represent  directory of image where we want to copy our source code, here dot only represent the root directory of image, we can go to various directory by using /)
 COPY . .
 
+#RUN command is used to execute the command in the image
+#We are installing the dependencies in the working directory
+RUN npm install
+
+
+
 

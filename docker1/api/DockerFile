@@ -18,7 +18,11 @@ COPY . .
 
 RUN npm install
 
+#We are exposing the port 4000 to the outside world(as we are listening to port 4000)
+EXPOSE 4000
+
 #Using CMD to run the command only when container begins to run (we are starting sthe node server in here) 
+
 CMD ["node","app.js"]
 
 

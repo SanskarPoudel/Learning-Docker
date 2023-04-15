@@ -8,15 +8,23 @@ FROM node:16.15.1-alpine
 
 WORKDIR /app
 
-#Second Layer:- we copy our source code to the image (In ther first dot means that  all the source code are available in the current directory, If the source code is presented in src folder then we say ./src )
-#(Second dot represent  directory of image where we want to copy our source code, here dot only represent the root directory of image, we can go to various directory by using /)
 
-COPY . .
+#Caching the dependencies in the image so that we don't have to install them again and again
+#copying the package.json file to the image(so that we can install the dependencies in the image if they are updated)
+COPY package.json .
 
 #RUN command is used to execute the command in the image
 #We are installing the dependencies in the working directory
 
 RUN npm install
+
+
+
+
+#Second Layer:- we copy our source code to the image (In ther first dot means that  all the source code are available in the current directory, If the source code is presented in src folder then we say ./src )
+#(Second dot represent  directory of image where we want to copy our source code, here dot only represent the root directory of image, we can go to various directory by using /)
+
+COPY . .
 
 #We are exposing the port 4000 to the outside world(as we are listening to port 4000)
 EXPOSE 4000

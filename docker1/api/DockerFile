@@ -27,7 +27,7 @@ CMD ["node","app.js"]
 
 
 
-#To build this image -> we go to the same directory where DockerFile is present and type docker build
+#To build this image -> we go to the same directory where DockerFile is present and type docker build -t <image name> .
 
 
 

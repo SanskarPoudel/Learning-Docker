@@ -21,4 +21,3 @@
 
 #docker run -it ubuntu (to run the container in interactive mode)
 
-#root@b0b5b0b5b0b5:/#

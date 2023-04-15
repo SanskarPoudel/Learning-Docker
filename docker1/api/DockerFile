@@ -1,17 +1,21 @@
 ```Dockerfile
 #At the top of the layer in DockerFile , we mention the base/Parent image(node for us) from which we want to build our image ( we can download base/parent image from docker hub)
 #(If we already have it in the Docker Image it will use that image, Otherwise it will pull it from the Docker Hub)
+
 FROM node:16.15.1-alpine 
 
 #Mentioning the working directory so that all our stuffs will be installed there instead of the root directory
+
 WORKDIR /app
 
 #Second Layer:- we copy our source code to the image (In ther first dot means that  all the source code are available in the current directory, If the source code is presented in src folder then we say ./src )
 #(Second dot represent  directory of image where we want to copy our source code, here dot only represent the root directory of image, we can go to various directory by using /)
+
 COPY . .
 
 #RUN command is used to execute the command in the image
 #We are installing the dependencies in the working directory
+
 RUN npm install
 
 

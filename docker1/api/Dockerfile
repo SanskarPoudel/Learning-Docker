@@ -4,6 +4,9 @@
 
 FROM node:16.15.1-alpine 
 
+#installing nodemon globally so that we can use it in our project
+RUN npm install -g nodemon
+
 #Mentioning the working directory so that all our stuffs will be installed there instead of the root directory
 
 WORKDIR /app
@@ -31,7 +34,9 @@ EXPOSE 4000
 
 #Using CMD to run the command only when container begins to run (we are starting sthe node server in here) 
 
-CMD ["node","app.js"]
+CMD ["npm","run","dev"]
+
+# CMD ["node","app.js"]
 
 
 

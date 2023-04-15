@@ -18,6 +18,10 @@ COPY . .
 
 RUN npm install
 
+#Using CMD to run the command only when container begins to run (we are starting sthe node server in here) 
+CMD ["node","app.js"]
+
+
 
 
 
